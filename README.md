@@ -1,2 +1,3 @@
 # ParkingLot
-System design for pring lot
+System design for parking lot
+reference: https://github.com/gopalbala/truecaller
