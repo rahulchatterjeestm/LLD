@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31321.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7DC552F9-F662-421B-9E80-C8FB9DFB4386}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{6942E4C0-02E4-468B-9864-A81DA9B8EEF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkingLot", "src\ParkingLot\ParkingLot.csproj", "{F8F6EB10-96FA-4563-A766-F9BED3DCFB3A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F8F6EB10-96FA-4563-A766-F9BED3DCFB3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8F6EB10-96FA-4563-A766-F9BED3DCFB3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8F6EB10-96FA-4563-A766-F9BED3DCFB3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8F6EB10-96FA-4563-A766-F9BED3DCFB3A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F8F6EB10-96FA-4563-A766-F9BED3DCFB3A} = {7DC552F9-F662-421B-9E80-C8FB9DFB4386}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ABE9E8DE-7D31-4099-90CD-274DC8658329}
+	EndGlobalSection
+EndGlobal
