@@ -16,7 +16,7 @@ namespace ParkingLot.Models
             List<string> tokenList = inputLine.Split().Where(i => i.Length>0).ToList();
             if(tokenList.Count() == 0)
             {
-                throw new Exception(); //invalid cmd
+                throw new Exception(); //Todo
             }
 
             this.CommandName = tokenList[0];
