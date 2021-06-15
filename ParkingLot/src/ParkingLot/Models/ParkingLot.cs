@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ParkingLot.Exceptions;
+using System;
 using System.Collections.Generic;
 
 namespace ParkingLot.Models
@@ -13,7 +14,7 @@ namespace ParkingLot.Models
         {
             if(capacity>maxCapacity || capacity<0)
             {
-                throw new System.Exception("Invalid capacity given for paring lot"); //Todo def excpetion
+                throw new ParkingSlotException("Invalid capacity given for paring lot");
             }
 
             this.Capacity = capacity;
@@ -24,7 +25,7 @@ namespace ParkingLot.Models
         {
             if(slotNum > this.Capacity || slotNum < 0)
             {
-                throw new Exception();//Todo make eception class
+                throw new InvalidSlotException();
             }
 
             if(!this.Slots.ContainsKey(slotNum))
@@ -40,7 +41,7 @@ namespace ParkingLot.Models
             Slot slot = GetSlot(slotNum);
             if(!slot.IsSlotFree)
             {
-                throw new Exception(); //todo
+                throw new SlotAlreadyOccupiedException();
             }
 
             slot.AssingCar(car);

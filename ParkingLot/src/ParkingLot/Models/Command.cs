@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ParkingLot.Exceptions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,7 +17,7 @@ namespace ParkingLot.Models
             List<string> tokenList = inputLine.Split().Where(i => i.Length>0).ToList();
             if(tokenList.Count() == 0)
             {
-                throw new Exception(); //Todo
+                throw new InvalidCommandException();
             }
 
             this.CommandName = tokenList[0];
