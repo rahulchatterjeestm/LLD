@@ -1,22 +1,34 @@
-﻿using System;
+﻿using ParkingLot.Exceptions;
+using System;
+using System.Collections.Generic;
 
 namespace ParkingLot.Models.Strategy
 {
     class NaturalOrderParkingStrategy : IParkingStrategy
     {
+        private SortedSet<int> sortedSet;
+
+        public NaturalOrderParkingStrategy()
+        {
+            this.sortedSet = new SortedSet<int>();
+        }
         public void AddSlot(int slotNum)
         {
-            throw new NotImplementedException();
+            this.sortedSet.Add(slotNum);
         }
 
         public int GetNextSlot()
         {
-            throw new NotImplementedException();
+            if(this.sortedSet.Count == 0)
+            {
+                throw new NoFreeSlotAvailableException();
+            }
+            return this.sortedSet.Min;
         }
 
         public void RemoveSlot(int slotNum)
         {
-            throw new NotImplementedException();
+            this.sortedSet.Remove(slotNum);
         }
     }
 }
