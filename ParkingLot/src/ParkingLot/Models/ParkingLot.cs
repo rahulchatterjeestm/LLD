@@ -13,7 +13,7 @@ namespace ParkingLot.Models
         {
             if(capacity>maxCapacity || capacity<0)
             {
-                throw new ParkingSlotException("Invalid capacity given for paring lot");
+                throw new ParkingLotException("Invalid capacity given for paring lot");
             }
 
             this.Capacity = capacity;

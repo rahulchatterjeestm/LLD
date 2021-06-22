@@ -1,6 +1,6 @@
 ﻿namespace ParkingLot.Exceptions
 {
-    public class SlotAlreadyOccupiedException: ParkingSlotException
+    public class SlotAlreadyOccupiedException: ParkingLotException
     {
     }
 }

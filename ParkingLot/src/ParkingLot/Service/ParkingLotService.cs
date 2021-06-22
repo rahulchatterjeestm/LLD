@@ -18,7 +18,7 @@ namespace ParkingLot.Service
         {
             if(this.parkingLot != null)
             {
-                throw new ParkingSlotException("Parking lot already exists");
+                throw new ParkingLotException("Parking lot already exists");
             }
 
             this.parkingLot = parkingLot;
@@ -29,5 +29,21 @@ namespace ParkingLot.Service
             }
         }
 
+        public int Park(Car car)
+        {
+            ValidateParkingLotExists();
+            var nextSlot = this.parkingStrategy.GetNextSlot();
+            this.parkingLot.Park(car, nextSlot);
+            parkingStrategy.RemoveSlot(nextSlot);
+            return nextSlot;
+        }
+
+        private void ValidateParkingLotExists()
+        {
+            if(this.parkingLot == null)
+            {
+                throw new ParkingLotException("Parking lot doesn't exist");
+            }
+        }
     }
 }

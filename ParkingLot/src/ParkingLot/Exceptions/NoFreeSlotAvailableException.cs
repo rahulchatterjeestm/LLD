@@ -1,6 +1,6 @@
 ﻿namespace ParkingLot.Exceptions
 {
-    public class NoFreeSlotAvailableException: ParkingSlotException
+    public class NoFreeSlotAvailableException: ParkingLotException
     {
     }
 }
