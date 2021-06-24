@@ -38,6 +38,40 @@ namespace ParkingLot.Service
             return nextSlot;
         }
 
+        public void MakeSlotFree(int slotNum)
+        {
+            this.ValidateParkingLotExists();
+            this.parkingLot.MakeSlotFree(slotNum);
+            this.parkingStrategy.AddSlot(slotNum);
+        }
+
+        public List<Slot> GetOccupiedSlots()
+        {
+            ValidateParkingLotExists();
+            var occupidSlotList = new List<Slot>();
+            var allSlots = this.parkingLot.Slots;
+
+            for(int i=1; i<=this.parkingLot.Capacity; i++)
+            {
+                if(allSlots.ContainsKey(i))
+                {
+                    var slot = allSlots[i];
+                    if(!slot.IsSlotFree)
+                    {
+                        occupidSlotList.Add(slot);
+                    }
+                }
+            }
+
+            return occupidSlotList;
+        }
+
+        public List<Slot> GetSlotsForColor(string color)
+        {
+            var occupiedSlots = this.GetOccupiedSlots();
+            return occupiedSlots.Where(slot => slot.GetParkedCar.Color == color).ToList();
+        }
+
         private void ValidateParkingLotExists()
         {
             if(this.parkingLot == null)
